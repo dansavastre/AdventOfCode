@@ -8,7 +8,7 @@ int n = 0;
 unsigned long long scores[100001];
 
 int cmp(const void * a, void const * b) {
-	return ( *(int*)a - *(int*)b );
+	return ( *(unsigned long long*)a - *(unsigned long long*)b );
 }
 
 int isOpenBracket(char ch) {
