@@ -22,9 +22,7 @@ def part_1(rucksacks):
     letters = []
     for rucksack in rucksacks:
         rucksack = rucksack.strip()
-        sets = []
-        sets.append(set(rucksack[:len(rucksack) // 2]))
-        sets.append(set(rucksack[len(rucksack) // 2:]))
+        sets = [set(rucksack[:len(rucksack) // 2]), set(rucksack[len(rucksack) // 2:])]
         letters.append(list(find_common(sets))[0])
     print('Part 1 priorities:', calculate_priorities(letters))
 
@@ -32,10 +30,7 @@ def part_1(rucksacks):
 def part_2(rucksacks):
     letters = []
     for i in range(0,len(rucksacks),3):
-        sets = []
-        sets.append(set(rucksacks[i].strip()))
-        sets.append(set(rucksacks[i+1].strip()))
-        sets.append(set(rucksacks[i+2].strip()))
+        sets = [set(rucksacks[i].strip()), set(rucksacks[i + 1].strip()), set(rucksacks[i + 2].strip())]
         # print('sets: ', sets, 'Common: ', find_common(sets))
         letters.append(list(find_common(sets))[0])
     print('Part 2 priorities:', calculate_priorities(letters))
