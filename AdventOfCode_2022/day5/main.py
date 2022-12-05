@@ -10,9 +10,9 @@ class move:
         - stack index to move to
     """
     def __init__(self, info):
-        self.number = info[0]
-        self.from_stack = info[1]
-        self.to_stack = info[2]
+        self.number = int(info[0])
+        self.from_stack = int(info[1])
+        self.to_stack = int(info[2])
 
     def __str__(self):
         return f"Move {self.number} from stack {self.from_stack} to stack {self.to_stack}"
@@ -49,7 +49,8 @@ class stack:
 
 
 if __name__ == '__main__':
-    file = open('day5_example.in', 'r')
+    # file = open('day5_example.in', 'r')
+    file = open('day5.in', 'r')
     lines = file.readlines()
     stacks = []
     moves = []
@@ -83,12 +84,26 @@ if __name__ == '__main__':
             print('Move: ', line)
             moves.append(move(re.findall(r'\d+', line)))
 
-    #
+    # Flip the stacks
+    for st in stacks:
+        st.stack.reverse()
+
+    #Sort stacks by index
+    stacks.sort(key=lambda x: x.getStackIndex())
     print('Stacks: ', stacks)
     print('Moves: ', moves)
 
     # Start moving
     for move in moves:
         print(move)
-        stacks[move.from_stack - 1].pop()
-        stacks[move.to_stack - 1].push(move.number)
+        for i in range(move.number):
+            stacks[move.to_stack - 1].push(stacks[move.from_stack - 1].pop())
+        print(stacks)
+
+    # Print the final result
+    # is the string of the top of each stack
+    result = ''
+    for st in stacks:
+        result += st.peek()
+    print('Result: ', result)
+
