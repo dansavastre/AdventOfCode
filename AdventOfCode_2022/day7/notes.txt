@@ -1,0 +1,12 @@
+dir / -> [
+    dir a -> [
+        dir e -> [
+            file i (584 bytes)
+        ] (584),
+        file f (29116 bytes),
+        file g (2557 bytes),
+        file h.lst (62596 bytes)
+    ] (94269),
+    file b.txt (14848514 bytes),
+    file c.dat (8504156 bytes),
+    dir d -> [file j (4060174 bytes), file d.log (8033020 bytes), file d.ext (5626152 bytes), file k (7214296 bytes)] (24933642)] (23352670)
