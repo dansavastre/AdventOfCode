@@ -64,13 +64,6 @@ def PrintFileSystem(currentDirectory, depth):
     else:
         print(f"{'  '*depth}{currentDirectory.name} ({currentDirectory.size} bytes)")
 
-    # for child in currentDirectory.children:
-    #     if isinstance(child, File):
-    #         print("    " * depth + str(child))
-    #     else:
-    #         print("    " * depth + str(child))
-    #         PrintFileSystem(child.name, depth + 1)
-
 
 def update_sizes(directory, size):
     """
