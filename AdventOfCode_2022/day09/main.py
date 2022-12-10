@@ -30,7 +30,7 @@ def print_grid(head, tail):
 
 if __name__ == '__main__':
     # print(np.sqrt(2))
-    # file = open('day9.in', 'r')
+    # file = open('day09.in', 'r')
     file = open('day9_example.in', 'r')
     moves = file.readlines()
     file.close()
