@@ -17,7 +17,9 @@ def day1():
             calories.append(current_sum)
             current_sum = 0
     # Print the top 3 values
-    print(np.sum(sorted(calories, reverse=True)[:3]))
+    # print(np.sum(sorted(calories, reverse=True)[:3]))
+    print(f"Part 1: {np.max(calories)}")
+    print(f"Part 2: {np.sum(sorted(calories, reverse=True)[:3])}")
 
 
 if __name__ == '__main__':
