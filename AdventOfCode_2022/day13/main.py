@@ -56,7 +56,7 @@ if __name__ == '__main__':
     print(f"Part 1: {res}")
 
     # Part 2
-    # Compare packets two at a time untill all packets are in the correct order
+    # Compare packets two at a time until all packets are in the correct order
     correct_order = False
     while not correct_order:
         correct_order = True
